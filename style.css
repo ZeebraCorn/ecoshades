@@ -81,3 +81,27 @@ a {
     font-weight: 500;
     text-transform: uppercase;
 }
+
+/* MAIN LAYOUT */
+
+/* HEADER */
+
+.site-header {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    z-index: 99;
+    background-color: #fafdfe;
+}
+
+/* HERO */
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(40px, 1fr) [inner-start] minmax(0, 78.5rem) [inner-end] minmax(40px, 1fr);
+    min-height: 100vh;
+}
+
+.hero__inner {
+    grid-column: inner;
+}
