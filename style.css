@@ -17,3 +17,43 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* TYPOGRAPHY */
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    line-height: 5rem;
+}
+
+p,
+li {
+    line-height: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* COMPONENTS */
+
+.button {
+    display: inline-block;
+    border: none;
+    background-color: #00AAA5;
+    color: #fafdfe;
+    border-radius: 2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
