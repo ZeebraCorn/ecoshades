@@ -22,6 +22,7 @@ body {
 
 html {
     font-family: 'Poppins', sans-serif;
+    line-height: 2.5rem;
 }
 
 h1,
@@ -81,9 +82,8 @@ a {
     font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
+    cursor: pointer;
 }
-
-/* MAIN LAYOUT */
 
 /* HEADER */
 
@@ -122,12 +122,80 @@ a {
 
 /* HERO */
 
-.hero {
+.hero__main {
     display: grid;
     grid-template-columns: minmax(40px, 1fr) [inner-start] minmax(0, 78.5rem) [inner-end] minmax(40px, 1fr);
     min-height: 100vh;
 }
 
 .hero__inner {
-    grid-column: inner;
+    display: flex;
+    gap: 3.75rem;
 }
+
+.social {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 2rem;
+}
+
+.social__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.hero__content {
+    font-size: 4.209rem;
+    max-width: 38.5rem;
+    margin-top: 10rem;
+}
+
+.hero__content h1 {
+    margin: 0 0 1rem 0;
+}
+
+.hero__content p {
+    margin: 0 0 2rem 0;
+}
+
+.hero__content span {
+    color: #00AAA5;
+}
+
+.hero__content p span {
+    color: #1d1e1d;
+    font-weight: 700;
+}
+
+.hero__image {
+    background-image: url(assets/images/hero-img.jpg);
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.image__desc {
+    background-color: rgb(92, 92, 92, 0.4);
+    backdrop-filter: blur(2px);
+    padding: 0.75rem 2.5rem;
+}
+
+.image__desc p {
+    margin: 0;
+    color: #fafdfe;
+}
+
+.shades-name {
+    font-weight: 700;
+}
+
+.shades-price {
+    font-weight: 300;
+}
+
