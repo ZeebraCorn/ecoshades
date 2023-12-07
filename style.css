@@ -22,7 +22,6 @@ body {
 
 html {
     font-family: 'Poppins', sans-serif;
-    line-height: 2.5rem;
 }
 
 h1,
@@ -33,7 +32,6 @@ h5,
 h6 {
     font-family: 'Comfortaa', sans-serif;
     font-weight: 700;
-    line-height: 5rem;
 }
 
 h1 {
@@ -74,7 +72,7 @@ a {
 
 .button {
     display: inline-block;
-    border: none;
+    border: 2px solid #00AAA5;
     background-color: #00AAA5;
     color: #fafdfe;
     border-radius: 2rem;
@@ -83,6 +81,13 @@ a {
     font-weight: 500;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.button:hover {
+    border: 2px solid #00AAA5;
+    color: #1d1e1d;
+    background-color: transparent;
+    transition: all 0.4s;
 }
 
 /* HEADER */
@@ -99,11 +104,67 @@ a {
     padding: 0 40px;
 }
 
-.shop-button,
-.menu-button {
+.site-header__buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.shop-button {
     background: none;
     border: none;
     color: #1d1e1d;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    flex-shrink: 0;
+    height: 24px;
+    width: 24px;
+}
+
+.hamburger-menu { 
+    background-color: #1d1e1d;
+    height: 2px;
+    width: 20px;
+    position: relative;  
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #1d1e1d;
+    top: -6px;
+    left: 0;
+    transition: top 0.2s 0.2s, transform 0.2s;
+}
+
+.hamburger-menu::after {
+    top: 6px;
+}
+
+.menu-button.close .hamburger-menu::before,
+.menu-button.close .hamburger-menu::after {
+    top: 0;
+}
+
+.menu-button.close .hamburger-menu::before {
+    transform: rotate(45deg);
+    transition: top 0.2s, transform 0.2s 0.2s;
+}
+
+.menu-button.close .hamburger-menu::after {
+    transform: rotate(-45deg);
+    transition: top 0.2s, transform 0.2s 0.2s;
+}
+
+.menu-button.close .hamburger-menu {
+    background-color: transparent;
+    transition: background-color 0s 0.2s;
 }
 
 /* MENU */
@@ -120,6 +181,51 @@ a {
     font-weight: 600;
 }
 
+.menu__link:hover {
+    color: #00AAA5;
+    transition: color 0.3s;
+}
+
+.full-menu {
+    position: fixed;
+    background-color: #9d9d9c;
+    top: 80px;
+    bottom: 80%;
+    left: 0;
+    right: 0;
+    z-index: 98;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    display: none;
+}
+
+.full-menu.open {
+    display: flex;
+}
+
+.full-menu .sub-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-menu--sm {
+    display: none;
+}
+
+.sub-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-menu--lg {
+    display: flex;
+    gap: 2.5rem;
+    padding-left: 14rem;
+    padding-top: 2rem;
+}
+
 /* HERO */
 
 .hero__main {
@@ -131,6 +237,7 @@ a {
 .hero__inner {
     display: flex;
     gap: 3.75rem;
+    grid-column: inner;
 }
 
 .social {
@@ -150,12 +257,12 @@ a {
 }
 
 .hero__content {
-    font-size: 4.209rem;
     max-width: 38.5rem;
-    margin-top: 10rem;
+    margin-top: 15rem;
 }
 
 .hero__content h1 {
+    font-size: 4.209rem;
     margin: 0 0 1rem 0;
 }
 
@@ -178,6 +285,7 @@ a {
     background-size: cover;
     display: flex;
     flex-direction: column-reverse;
+    flex: 1;
 }
 
 .image__desc {
@@ -199,3 +307,39 @@ a {
     font-weight: 300;
 }
 
+/* 1440px or less */
+
+@media screen and (max-width: 1440px) {
+    
+    .hero__content {
+        margin-top: 12rem;
+    }
+}
+
+/* 1024px or less */
+
+@media screen and (max-width: 1024px) {
+
+    .sub-menu--lg{
+        display: none;
+    }  
+
+    .menu--lg {
+        display: none;
+    }  
+    
+    .sub-menu--sm {
+        display: flex;
+        padding-top: 1rem;
+    }
+
+    .full-menu {
+        bottom: 70%;
+    }
+
+    .full-menu .sub-menu {
+        gap: 0.5rem;
+    }
+
+
+}
