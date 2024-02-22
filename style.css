@@ -324,15 +324,40 @@ a {
     font-weight: 300;
 }
 
-/* 163px or less */
+/* SHADES */
 
-@media screen and (max-width: 1630px) {
-    
-    .social {
-        bottom: -2rem;
-    }
+.shades__main {
+    display: grid;
+    grid-template-columns: minmax(40px, 1fr) [inner-start] minmax(0, 78.5rem) [inner-end] minmax(40px, 1fr);
 }
 
+.shades__inner {
+    display: grid;
+    grid-column: inner;
+}
+
+.shades__title {
+    font-size: 4.209rem;
+    color: #00AAA5;
+    margin: 11.5rem 0 4.5rem 0;
+}
+
+.shades-header__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.collections, 
+.filter {
+    background: none;
+    border: none;
+    color: #1d1e1d;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1.125rem;
+}
 
 /* 1400px or less */
 
@@ -417,6 +442,15 @@ a {
         font-size: clamp(1rem, 0.4545rem + 2.4242vw, 1.5rem);
     }
 
+}
+
+/* 163px or less */
+
+@media screen and (max-width: 1630px) {
+    
+    .social {
+        bottom: -2rem;
+    }
 }
 
 /* 480px or less */
